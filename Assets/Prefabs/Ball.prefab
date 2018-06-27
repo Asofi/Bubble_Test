@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4665106079727726}
   - component: {fileID: 114535864146648030}
-  m_Layer: 0
+  - component: {fileID: 135562783714553062}
+  m_Layer: 8
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,8 +38,7 @@ GameObject:
   - component: {fileID: 4176752030924404}
   - component: {fileID: 33436161278361480}
   - component: {fileID: 23175146384241626}
-  - component: {fileID: 135761674812415316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,12 +125,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5181c1ccbafa8c4e8c23de9ea8b4d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135761674812415316
+  EffectPrefab: {fileID: 1997086139484950, guid: 9c150dad2b2e1f1459faefc29bc6f715,
+    type: 2}
+--- !u!135 &135562783714553062
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1345090238759390}
+  m_GameObject: {fileID: 1115047610338368}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
