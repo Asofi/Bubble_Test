@@ -62,7 +62,7 @@ public class SpawnController : MonoBehaviour{
         GameController.TimerUpdated -= OnTimerUpdated;
         GameController.GameStarted -= OnGameStarted;
         GameController.GameEnded -= OnGameEnded;
-        GameController.TimerStarted-= OnTimerStarted;
+        GameController.TimerStarted -= OnTimerStarted;
     }
 
     #endregion
