@@ -69,12 +69,12 @@ public class SpawnController : MonoBehaviour{
 
     #region Event Handlers
     
-    void OnTimerStarted(int obj){
+    void OnTimerStarted(float obj){
         _maxTimer = obj;
         _currentSpeed = _baseSpeed;
     }
 
-    void OnTimerUpdated(int obj){
+    void OnTimerUpdated(float obj){
         if(obj > 0)
             _currentSpeed = Mathf.Lerp(_baseSpeed, _maxBaseSpeed, 1 - obj / _maxTimer);
     }

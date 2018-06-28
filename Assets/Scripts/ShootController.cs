@@ -4,7 +4,7 @@ public class ShootController : MonoBehaviour{
 
     #region Variables
 
-    [SerializeField] LayerMask _shootableObjectMask;
+    [SerializeField] LayerMask _shootableObjectMask;                                    //LayerMask for shootable objects
     Camera _camera;
 
     #endregion
@@ -25,6 +25,9 @@ public class ShootController : MonoBehaviour{
 
     #region Private Methods
 
+    /// <summary>
+    /// Handles shooting
+    /// </summary>
     void Shoot(){
         RaycastHit hit;
         var ray = _camera.ScreenPointToRay(Input.mousePosition);

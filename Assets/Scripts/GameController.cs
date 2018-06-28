@@ -3,20 +3,21 @@ using System.Collections;
 using UnityEngine;
 
 public class GameController : MonoBehaviour{
+
+    const float TimerStep = 0.1f;
     
     #region Events   
     
-    public static event Action<int> ScoreUpdated, TimerStarted, TimerUpdated;
+    public static event Action<int> ScoreUpdated;
+    public static event Action<float> TimerUpdated, TimerStarted;
     public static event Action GameStarted, GameEnded;
-    
+
     #endregion
 
     #region Variables
 
-    const int TimerStep = 1;
-
-    [SerializeField] int _gameSessionTime;
-    int _timeLeft;
+    [SerializeField] float _gameSessionTime;
+    float _timeLeft;
     int _score;
 
     #endregion
@@ -31,7 +32,7 @@ public class GameController : MonoBehaviour{
         }
     }
 
-    int TimeLeft{
+    float TimeLeft{
         get{ return _timeLeft; }
         set{
             _timeLeft = value;
@@ -53,18 +54,28 @@ public class GameController : MonoBehaviour{
 
     #endregion
 
-    #region Private Methods
+    #region Event Handlers
 
-    void OnBallDestroyed(int obj){
+    void OnBallDestroyed(int obj) {
         Score += obj;
     }
 
+    #endregion
+
+    #region Private Methods
+
+    /// <summary>
+    /// Initialise game
+    /// </summary>
     void Init(){
         TimeLeft = _gameSessionTime;
         Score = 0;
         StartCoroutine(TimerCoroutine());
     }
 
+    /// <summary>
+    /// Rises GameEnded event
+    /// </summary>
     void EndGame(){
         GameEnded?.Invoke();
     }

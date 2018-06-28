@@ -39,8 +39,8 @@ public class UIController : MonoBehaviour {
 		RestartPanel.SetActive(false);
 	}
 
-	void OnTimerUpdated(int obj){
-		_timer.text = $"Time remains: {obj}";
+	void OnTimerUpdated(float obj){
+		_timer.text = $"Time remains: {obj:0.#}";
 	}
 
 	void OnScoreUpdated(int obj){

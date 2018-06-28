@@ -94,6 +94,9 @@ public class Ball : MonoBehaviour{
 
     #region Private Methods
 
+    /// <summary>
+    /// Moves ball over time
+    /// </summary>
     void Move(){
         transform.Translate(transform.up * _speed * Time.deltaTime);
         if (transform.position.y > SpawnController.ScreenBounds.VerticalBounds.y)
